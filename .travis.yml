@@ -1,7 +1,15 @@
+---
 language: node_js
 node_js:
-	- "0.10"
-
+- '0.10'
 before_script:
-	- yeti --server
-	- sleep 3
+- yeti --server
+- sleep 3
+- java -jar tests/tools/BrowserStackTunnel.jar BRSTK_KEY localhost,9000,0
+- sleep 3
+env:
+  global:
+  - secure: |-
+      KmQXuSLRMPfolnYn7gx3lCmivdTlo8GAr4DW5JMttDecUq/KgJZFwoesdeiA
+      T3gqmks1REcsp4Vc72QCwLiJ6loQCS5XNms1miLYlLA3Yq67Di8PevyX8tTh
+      ahuqlJASQh+TNmhebK4pnvx0ShE0kCh9rNNI/dS1TNyGJdrTreE=
